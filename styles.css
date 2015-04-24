@@ -8,11 +8,11 @@
 
 img {
   display: none;
-  /*width: 200px;*/
-  transform:scale(8);
-  webkit-filter: blur(10px);
-  transition: transform 5s ease;
-  transition: webkit-filter 2s ease;
+  width: 400px;
+  height:400px;
+  transform: scale(10);
+  -webkit-filter: blur(8px);
+  transition: transform 4s ease-in-out, -webkit-filter 3s ease-in;
 }
 
 #answer-buttons {
@@ -26,11 +26,14 @@ img {
 }
 
 .zoom-out{
-    transform:scale(1);
-    webkit-filter: blur(0px);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
 }
 
 #restart-game {
   display: none;
->>>>>>> 5704b0b415c30a71814f88c62d5bbd24c56358ae
+}
+
+#reveal{
+    display:none;
 }

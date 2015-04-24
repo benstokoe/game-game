@@ -1,5 +1,7 @@
 var images = $('img');
 var currentPerson = "";
+var randomImage;
+var imageNumber;
 
 $('#start-game').on('click', function(e) {
     e.preventDefault();
@@ -19,6 +21,8 @@ $('#answer-buttons').on('click', function(e) {
     e.preventDefault();
 
     hideAnswerButtons();
+    images.hide();
+    $('#reveal').hide();
 
     if (e.target.id === currentPerson) {
         $('#current-answer').html('CORRECT!');
@@ -43,19 +47,22 @@ var showRandomPicture = function() {
     hideAnswerButtons();
     $('#current-answer').html('');
 
-    var imageNumber = randomNumber(images.length);
-    var randomImage = images[imageNumber];
+    imageNumber = randomNumber(images.length);
+    randomImage = images[imageNumber];
 
     $(randomImage).show();
     currentPerson = randomImage.dataset.person;
 
-    setTimeout(function() {
-        $(randomImage).addClass('zoom-out');
-        // $(randomImage).hide();
-        images.splice(imageNumber, 1);
-        showAnswerButtons();
-    }, 1000);
+    $('#reveal').show();
 };
+
+$('#reveal').on('click', function(e) {
+    e.preventDefault();
+    $(randomImage).addClass('zoom-out');
+    // $(randomImage).hide();
+    images.splice(imageNumber, 1);
+    showAnswerButtons();
+});
 
 var hideAnswerButtons = function() {
     $('#answer-buttons').hide();
