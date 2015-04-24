@@ -67,7 +67,7 @@ var showAnswerButtons = function() {
 var showEndScreen = function() {
     $('#current-answer').html('');
     $('#final-text').html('Final ');
-    $('#restart-game').show();
+    $('#restart-game').css('display', 'block');
 };
 
 var randomNumber = function(max) {
