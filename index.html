@@ -16,7 +16,7 @@
       <a href="#" id="restart-game" class="btn btn-primary btn-block">Play again!</a>
 
     <div id="scoreboard">
-      <h2><span id="final-text"></span>Score <span id="game-score">0</span></h2>
+      <h2><span id="final-text"></span>Score: <span id="game-score">0</span></h2>
       <h2 id="current-answer"></h2>
     </div>
     
@@ -44,15 +44,13 @@
       </div>
     </div>
 
-    <!-- <div>
-      <button id="reveal">Reveal</button>
-    </div> -->
-
-    <div class="row">
-      <div id="answer-buttons">
-        <h2>Who is it?</h2>
-        <a href="#" id="game" class="btn btn-primary col-sm-6">Game</a>
-        <a href="#" id="moby" class="btn btn-primary col-sm-6">Moby</a>
+    <div id="answer-buttons">
+      <h2>Who is it?</h2>
+      <div class="col-md-6">
+        <a href="#" id="game" class="btn-block btn btn-primary" role="button">Game</a>
+      </div>
+      <div class="col-md-6">
+        <a href="#" id="moby" class="btn-block btn btn-primary" role="button">Moby</a>
       </div>
     </div>
 
