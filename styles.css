@@ -1,3 +1,11 @@
+#scoreboard h2 {
+  margin-bottom: 0;
+}
+#scoreboard h3 {
+  float: left;
+  padding-right: 10px;
+}
+
 img {
   display: none;
   width: 200px;

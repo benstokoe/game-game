@@ -9,15 +9,25 @@ $('#start-game').on('click', function(e) {
 $('#answer-buttons').on('click', function(e) {
     e.preventDefault();
 
+    hideAnswerButtons();
+
     if (e.target.id === currentPerson) {
-        console.log('CORRECT! ' + currentPerson);
+        $('#current-answer').html('CORRECT!');
+
+        var currentPersonScore = $('#game-score');
+        $(currentPersonScore).html(parseInt($(currentPersonScore).html(), 10) + 1)
+    } else {
+        $('#current-answer').html('WRONG!');
     }
 
-    showRandomPicture();
+    setTimeout(function() {
+        showRandomPicture();
+    }, 500);
 });
 
 var showRandomPicture = function() {
     hideAnswerButtons();
+    $('#current-answer').html('');
 
     var images = $('img');
     var randomImage = images[randomNumber(images.length)];
