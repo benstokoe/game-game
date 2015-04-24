@@ -29,3 +29,8 @@ img {
     transform:scale(1);
     webkit-filter: blur(0px);
 }
+
+#restart-game {
+  display: none;
+>>>>>>> 5704b0b415c30a71814f88c62d5bbd24c56358ae
+}
