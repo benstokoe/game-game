@@ -18,15 +18,25 @@ img {
   transition: transform 4s ease-in-out, -webkit-filter 3s ease-in;
 }
 
+.btn {
+  border-radius: 0; 
+}
+
 .image-container{
-    width: 100%;
-    overflow:hidden;
-    margin:auto;
+  width: 100%;
+  overflow:hidden;
+  margin:auto;
 }
 
 .zoom-out{
-    transform: scale(1);
-    -webkit-filter: blur(0px);
+  transform: scale(1);
+  -webkit-filter: blur(0px);
+}
+
+@media screen and (max-width: 768px) {
+  #answer-buttons a:first-child {
+    margin-bottom: 10px;
+  }
 }
 
 #answer-buttons, #restart-game, #scoreboard, #reveal {
