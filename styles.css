@@ -20,7 +20,7 @@ img {
 
 .btn {
   border-radius: 0; 
-}
+  }
 
 .image-container{
   width: 100%;
@@ -34,6 +34,10 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+
+  h1 { font-size: 30px; }
+  h2 { font-size: 24px; }
+
   #answer-buttons a:first-child {
     margin-bottom: 10px;
   }
