@@ -1,0 +1,22 @@
+{
+  "name": "game-game",
+  "version": "1.0.0",
+  "description": "A silly but very fun game where you have to guess if it is Chris Game or Moby.",
+  "main": "logic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benstokoe/game-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benstokoe/game-game/issues"
+  },
+  "homepage": "https://github.com/benstokoe/game-game",
+  "dependencies": {
+    "serve": "^1.4.0"
+  }
+}
