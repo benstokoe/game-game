@@ -14,3 +14,7 @@ img {
 #answer-buttons {
   display: none;
 }
+
+#restart-game {
+  display: none;
+}
