@@ -12,16 +12,16 @@
 
 img {
   display: none;
-  width: 400px;
-  height:400px;
-  transform: scale(10);
-  -webkit-filter: blur(8px);
+  width: 600px;
+  height:600px;
+  transform: scale(8);
+  -webkit-filter: blur(2px);
   transition: transform 4s ease-in-out, -webkit-filter 3s ease-in;
 }
 
 .image-container{
-    height:400px;
-    width:400px;
+    height:600px;
+    width:600px;
     overflow:hidden;
     margin:auto;
 }
