@@ -8,7 +8,9 @@ $('#start-game').on('click', function(e) {
 
     $(this).hide();
 
+    $('#scoreboard').show();
     showRandomPicture();
+    showAnswerButtons();
 });
 
 $('#restart-game').on('click', function(e) {
@@ -19,32 +21,34 @@ $('#restart-game').on('click', function(e) {
 
 $('#answer-buttons').on('click', function(e) {
     e.preventDefault();
-
+    reveal();
     hideAnswerButtons();
-    images.hide();
-    $('#reveal').hide();
+    images.splice(imageNumber, 1);
 
-    if (e.target.id === currentPerson) {
-        $('#current-answer').html('CORRECT!');
+    setTimeout(function(){
+        if (e.target.id === currentPerson) {
+            $('#current-answer').html('CORRECT!');
 
-        var currentPersonScore = $('#game-score');
-        $(currentPersonScore).html(parseInt($(currentPersonScore).html(), 10) + 1)
-    } else {
-        $('#current-answer').html('WRONG!');
-    }
+            var currentPersonScore = $('#game-score');
+            $(currentPersonScore).html(parseInt($(currentPersonScore).html(), 10) + 1)
+        } else {
+            $('#current-answer').html('WRONG!');
+        }
+    }, 5000)
 
     setTimeout(function() {
+        $('img').hide();
         if (images.length !== 0) {
             showRandomPicture();
+            showAnswerButtons();
         } else {
             showEndScreen();
         }
-    }, 500);
+    }, 7000);
 
 });
 
 var showRandomPicture = function() {
-    hideAnswerButtons();
     $('#current-answer').html('');
 
     imageNumber = randomNumber(images.length);
@@ -52,17 +56,15 @@ var showRandomPicture = function() {
 
     $(randomImage).show();
     currentPerson = randomImage.dataset.person;
-
-    $('#reveal').show();
 };
 
-$('#reveal').on('click', function(e) {
-    e.preventDefault();
-    $(randomImage).addClass('zoom-out');
-    // $(randomImage).hide();
-    images.splice(imageNumber, 1);
-    showAnswerButtons();
-});
+// $('#reveal').on('click', function(e) {
+//     e.preventDefault();
+    
+//     // $(randomImage).hide();
+    
+//     showAnswerButtons();
+// });
 
 var hideAnswerButtons = function() {
     $('#answer-buttons').hide();
@@ -79,4 +81,8 @@ var showEndScreen = function() {
 
 var randomNumber = function(max) {
     return (Math.ceil(Math.random() * max)) -1
+};
+
+var reveal = function(){
+    $(randomImage).addClass('zoom-out');
 };
