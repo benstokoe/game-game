@@ -21,9 +21,9 @@ $('#restart-game').on('click', function(e) {
 
 $('#answer-buttons').on('click', function(e) {
     e.preventDefault();
+
     reveal();
     hideAnswerButtons();
-    images.splice(imageNumber, 1);
 
     setTimeout(function(){
         if (e.target.id === currentPerson) {
@@ -44,7 +44,7 @@ $('#answer-buttons').on('click', function(e) {
         } else {
             showEndScreen();
         }
-    }, 7000);
+    }, 6000);
 
 });
 
@@ -53,24 +53,21 @@ var showRandomPicture = function() {
 
     imageNumber = randomNumber(images.length);
     randomImage = images[imageNumber];
+    images.splice(imageNumber, 1);
 
     $(randomImage).show();
     currentPerson = randomImage.dataset.person;
 };
-
-// $('#reveal').on('click', function(e) {
-//     e.preventDefault();
-    
-//     // $(randomImage).hide();
-    
-//     showAnswerButtons();
-// });
 
 var hideAnswerButtons = function() {
     $('#answer-buttons').hide();
 };
 var showAnswerButtons = function() {
     $('#answer-buttons').show();
+};
+
+var reveal = function(){
+    $(randomImage).addClass('zoom-out');
 };
 
 var showEndScreen = function() {
@@ -81,8 +78,4 @@ var showEndScreen = function() {
 
 var randomNumber = function(max) {
     return (Math.ceil(Math.random() * max)) -1
-};
-
-var reveal = function(){
-    $(randomImage).addClass('zoom-out');
 };
