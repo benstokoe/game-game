@@ -8,9 +8,24 @@
 
 img {
   display: none;
-  width: 200px;
+  /*width: 200px;*/
+  transform:scale(8);
+  webkit-filter: blur(10px);
+  transition: transform 5s ease;
+  transition: webkit-filter 2s ease;
 }
 
 #answer-buttons {
   display: none;
+}
+
+.container{
+    height:400px;
+    width:400px;
+    overflow:hidden;
+}
+
+.zoom-out{
+    transform:scale(1);
+    webkit-filter: blur(0px);
 }

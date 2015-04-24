@@ -36,9 +36,9 @@ var showRandomPicture = function() {
     currentPerson = randomImage.dataset.person;
 
     setTimeout(function() {
-        $(randomImage).hide();
+        $(randomImage).addClass('zoom-out');
         showAnswerButtons();
-    }, 300);
+    }, 1000);
 };
 
 var hideAnswerButtons = function() {
