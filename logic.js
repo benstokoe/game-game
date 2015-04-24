@@ -6,6 +6,7 @@ $('#start-game').on('click', function(e) {
 
     $(this).hide();
 
+    $('#scoreboard').show();
     showRandomPicture();
 });
 

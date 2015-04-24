@@ -11,10 +11,6 @@ img {
   width: 200px;
 }
 
-#answer-buttons {
-  display: none;
-}
-
-#restart-game {
+#answer-buttons, #restart-game, #scoreboard {
   display: none;
 }
