@@ -1,4 +1,8 @@
 img {
-  display: none; // default
+  display: none;
   width: 200px;
+}
+
+#answer-buttons {
+  display: none;
 }
